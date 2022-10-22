@@ -106,14 +106,14 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
 
 ## 6. GWAS using TASSEL
    
-   1. Open TASSEL  
-   2. Import data  
+     1. Open TASSEL  
+     2. Import data  
       Genotype data: All.SNP.filter.maf0.05.vcf  
       Phenotype data  
       Q  
       Kinship (Tassel - Analysis -Relatedness - Kinship)  
-   3. Data - InsertJoin - Analysis - Association - MLM  
-   4.Export results  
+     3. Data - InsertJoin - Analysis - Association - MLM  
+     4.Export results  
 
 
      
