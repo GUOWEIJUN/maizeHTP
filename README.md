@@ -44,9 +44,10 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     ../bin/PopLDdecay
    
 # GWAS
-## 1.data preparation
-    #All_imputated.hmp
+## 1.data preparation  
+    # All_imputated.hmp
     Download genotype data form maizeGO (http://www.maizego.org/Resources.html)  
+    
     
     
      
