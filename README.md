@@ -11,22 +11,43 @@ Next, we performed genome-wide association analysis (GWAS) and showed the distri
 Finally, we implemented maize final plant height (PH) prediction using early stage i-Traits based on Random forests (RF) (code: caret_regression_RF_CV10.R, dataset: S4_all.txt).
 
 # System requirement
-For GWAS
+## For GWAS
 
-   1.plink 1.90b6.21   
-   2.admixture 1.3.0   
-   3.bedtools 2.30.0  
+  1. plink 1.90b6.21   
+  2. admixture 1.3.0   
+  3. bedtools 2.30.0  
+  4. PopLDdecay
 
-For data visualization
+## For data visualization
 
-   1.R 4.1.0  
-   2.Rstudio   
-   3.R package  
+  1. R 4.1.0  
+  2. Rstudio   
+  3. R package  
+    (1) ggplot2 3.3.6  
+    (2) caret 6.0-93  
 
-(1) ggplot2 3.3.6
-
-(2) caret 6.0-93
-
-
+# Quick Start to install the required program
+  1. insatll conda  
+  
+    Download annoconda form conda (https://anaconda.org/anaconda/conda)  
+      
+  2. create environment and install software  
+     
+    conda create -n GWAS plink  admixture bedtools   
+     
+  3. install PopLDdecay form github  
+    
+    Download PopLDdecay-master.zip and unzip 
+    cd PopLDdecaymaster 
+    cd src  
+    make  
+    ../bin/PopLDdecay
+   
 # GWAS
-1.data preparation
+## 1.data preparation
+    #All_imputated.hmp
+    Download genotype data form maizeGO (http://www.maizego.org/Resources.html)  
+    
+    
+     
+    
