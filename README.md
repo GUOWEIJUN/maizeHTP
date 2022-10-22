@@ -17,6 +17,8 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
   2. admixture 1.3.0   
   3. bedtools 2.30.0  
   4. PopLDdecay
+  5. GEC tool 0.2  
+  6. TASSEL 5.0
 
 ## For data visualization
 
@@ -42,13 +44,66 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     cd src  
     make  
     ../bin/PopLDdecay
+    
+   **Note:** More detail please see https://github.com/BGI-shenzhen/PopLDdecay
    
+  4. install GEC tool 
+     
+    Downlaod GEC tool from http://pmglab.top/gec/#/download  
+    unzip GEC.zip  
+  
+  5. insatll tassel  
+     
+    Download TASSEL from https://tassel.bitbucket.io/  
+    
 # GWAS
-## 1.data preparation  
+## 1. data preparation  
     # All_imputated.hmp
     Download genotype data form maizeGO (http://www.maizego.org/Resources.html)  
     
-    
+## 2. Format conversion and filter with MAF (minor allelic frequency)
+     
+     run_pipeline.pl  -Xmx100g   -SortGenotypeFilePlugin -inputFile All_imputated.hmp -outputFile All_imputated.sort.hmp.txt -fileType Hapmap  
+     run_pipeline.pl  -Xms10g   -Xmx100g  -fork1 -h   All_imputated.sort.hmp.txt -export -exportType VCF  
+          
+## 2. Linkagedisequilibrium (LD) calculation and visualization
+     
+     /home/guoweijun/soft/LD/PopLDdecay-master/bin/PopLDdecay     -InVCF   All_imputated.vcf  -OutStat  LDdecay  -MaxDist  300  -Miss 0.1  -MAF 0.05  
+     perl  /home/guoweijun/soft/LD/PopLDdecay-master/bin/Plot_OnePop.pl  -inFile   LDdecay.stat.gz  -output  Fig-all  
+
+   #--geno 0.2 
+
+2649413 All_imputated.vcf
+1253830 All.SNP.filter.maf0.05.vcf
+
+
+plink --vcf All.SNP.filter.maf0.05.vcf --indep-pairwise 50 10 0.1 --out demo.admixture --allow-extra-chr
+plink --vcf All.SNP.filter.maf0.05.vcf --recode vcf-iid --extract demo.admixture.prune.in --out demo.admixture.in
+plink --vcf demo.admixture.in.vcf  --make-bed  --out imputed
+for K in {1..10}; do admixture --cv  imputed.bed $K | tee log${K}.out; done
+grep -h CV log*.out
+
+
+CV error (K=10): 0.85957
+CV error (K=1): 0.92360
+CV error (K=2): 0.89921
+CV error (K=3): 0.88652
+CV error (K=4): 0.87761
+CV error (K=5): 0.87044
+CV error (K=6): 0.86636
+CV error (K=7): 0.86133
+CV error (K=8): 0.86028
+CV error (K=9): 0.86086
+
+K=10
+
+
+java -Xmx10g -jar ../../../../../00.soft/kggsee.jar --var-gec --nt 8 --filter-maf-le 0.05 --vcf-ref All.SNP.filter.maf0.05.vcf --out All.SNP.filter.maf0.05.efficent
+
+All.SNP.filter.maf0.05.vcf.gz
+ 1828 variants are ignored due to their minor allele frequency (MAF) in sample <=0.05000000074505806
+1253814 variant-lines (0 indels) are scanned in /mnt/d/guowj/share/MP/response/00.SNP_info/all_data/All.SNP.filter.maf0.05.vcf; and 1251986 variants of 540 individual(s) are retained.
+
     
      
     
