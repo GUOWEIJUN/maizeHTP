@@ -39,7 +39,7 @@ corrplot(var$contrib, is.corr=FALSE)
 dev.off()
 
 #Contribution
-pdf("PCA.contrib.pdf",width = 8,height = 8)
+png("PCA.contrib.png",width = 8,height = 8)
 fviz_pca_var(S.pca, col.var = "contrib",
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07")
 )
