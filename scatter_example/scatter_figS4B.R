@@ -4,7 +4,7 @@ install.packages("GGally")
 #library
 library("GGally")
 #read dataset
-dat=read.delim(header=T,file='S6.txt',sep="\t",check.names = FALSE)
+dat=read.delim(header=T,file='S6-S5.txt',sep="\t",check.names = FALSE)
 head(dat)
 #iLI1	iLI2	iLI3	iLI4	iLI5	iLI6	iLI7	iLI8	iLI9	iLI10	iLI11	iLI12	iPH	stage
 #0.309	1.069	1.137	1.844	0.148	2.178	1.032	0.312	0.18	1.234	1.482	4.905	5.145	S6_S5
