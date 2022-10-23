@@ -17,7 +17,16 @@ data <- read.table("PH.SNP.txt",header=T)
 # bin.max=N
 # memo: add a character to the output file name.
 
+##png
 CMplot(
   data, plot.type="d",  bin.size=1e6, col=c("darkgreen", "yellow", "red"),
   file="jpg", memo="Fig1", dpi=1200, file.output=TRUE, verbose=TRUE
 )
+
+##pdf
+CMplot(
+  data, plot.type="d",  bin.size=1e6, col=c("darkgreen", "yellow", "red"),
+  file="pdf", memo="Fig1", dpi=1200, file.output=TRUE, verbose=TRUE
+)
+
+#export
