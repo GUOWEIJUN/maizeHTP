@@ -13,23 +13,23 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
 # System requirement
 ## For GWAS
 
-  1. plink 1.90b6.21   
-  2. admixture 1.3.0   
-  3. bedtools 2.30.0  
-  4. PopLDdecay
-  5. GEC tool 0.2  
-  6. TASSEL 5.0
-  7. LDBlockShow 1.40
+  1. plink v1.90b6.21   
+  2. admixture v1.3.0   
+  3. bedtools v2.30.0  
+  4. PopLDdecay v3.42
+  5. GEC tool v0.2  
+  6. TASSEL v5.0
+  7. LDBlockShow v1.40
 
 ## For data visualization
 
-  1. R 4.1.0  
+  1. R v4.1.0  
   2. Rstudio   
   3. R package  
-     * ggplot2  3.3.6  
-     * caret 6.0-93  
-     * FactoMineR 2.6   
-     * factoextra 1.0.7  
+      * ggplot2 v3.3.6  
+      * caret v6.0-93  
+      * FactoMineR v2.6   
+      * factoextra v1.0.7  
 
 
 # Quick Start to install the required program
@@ -69,10 +69,10 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     ../bin/LDBlockShow  
  
   # R package
-    1. install.packages("ggplot2")
-    2. install.packages("caret") 
-    3. install.packages("FactoMineR")
-    4. install.packages("factoextra")  
+    install.packages("ggplot2")
+    install.packages("caret") 
+    install.packages("FactoMineR")
+    install.packages("factoextra")  
     
 # GWAS
 ## 1. data preparation  
@@ -126,10 +126,10 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
    
      1. Open TASSEL  
      2. Import data  
-      Genotype data: All.SNP.filter.maf0.05.vcf  
-      Phenotype data  
-      Q: imputed.10.Q 
-      Kinship:kinship.txt (Tassel - Analysis -Relatedness - Kinship)  
+         Genotype data: All.SNP.filter.maf0.05.vcf  
+         Phenotype data  
+         Q: imputed.10.Q 
+         Kinship:kinship.txt (Tassel - Analysis -Relatedness - Kinship)  
      3. Data - InsertJoin - Analysis - Association - MLM  
      4.Export results  
 
