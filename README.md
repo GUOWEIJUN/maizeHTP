@@ -132,15 +132,16 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
 
      zcat  All_imputated.vcf.gz   |awk  -v OFS="\t"  '($1=="6"&&$2>=1487642&&$2<=1591643){print$0}'   >Zm035008.vcf  
 
-     ### 2. 提取GWAS结果  
+     ### 2. Extracting GWAS result  
      awk  -v OFS="\t"  '($3=="6"&&$4>=1487642&&$4<=1591643){print$3,$4,$6}'  GLM_Stats_5.dMPAR_S7.txt  >i-MPAR_S7_Zm035008.GLM.txt  
      awk  -v OFS="\t"  '($3=="6"&&$4>=1487642&&$4<=1591643){print$3,$4,$7}'  MLM_statistics_5.dMPAR_S7.txt  >i-MPAR_S7_Zm035008.MLM.txt  
 
-     ### 3. 提取显著性文件  
+     ### 3. Extracting significant GWAS result
      
      awk  -v OFS="\t"  '($3=="6"&&$4>=1487642&&$4<=1591643&&$7<=7.98731E-07){print$3,$4,$2}'  MLM_statistics_i-TL.txt   >i-MPAR_S7_Zm035008.MLM.snp  
      
      ### 4.Visualization
+     
      ./LDBlockShow-master/bin/LDBlockShow   -InVCF  Zm035008.vcf -OutPut  Zm035008     -InGWAS  i-MPAR_S7_Zm035008.GLM.txt  -Region   6:1487642:1591643    -OutPng    -SeleVar 2  
      ./LDBlockShow-master/bin/ShowLDSVG   -InPreFix  Zm035008  -OutPut   Zm035008.1     -InGWAS   i-MPAR_S7_Zm035008.GLM.txt   -Cutline  6.097599473  -PointSize 15   -OutPng   -SpeSNPName  i-MPAR_S7_Zm035008.GLM.snp  -ShowGWASSpeSNP  
 
