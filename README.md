@@ -1,17 +1,17 @@
 # maizeHTP
-Integrating high-throughput phenotyping, GWAS and prediction models reveals the genetic architecture of plant height in maize
+Integrating high-throughput phenotyping, GWAS and prediction models reveals the genetic architecture of plant height in maize  
 
-# Introduction
-Here, we developed an automated high-throughput phenotyping platform (HTP) and used it to quantify image-based traits (i-traits) for 228 maize inbred lines across all developmental stages. We upload all code used in the paper entitled "Integrating high-throughput phenotyping, GWAS and prediction models reveals the genetic architecture of plant height in maize".
+# Introduction  
+Here, we developed an automated high-throughput phenotyping platform (HTP) and used it to quantify image-based traits (i-traits) for 228 maize inbred lines across all developmental stages. We upload all code used in the paper entitled "Integrating high-throughput phenotyping, GWAS and prediction models reveals the genetic architecture of plant height in maize".  
 
-First, the i-Traits were extracted from maize images (code: maize image analysis.iac) on the HTP platform software system, and then all i-Traits data were analyzed, such as Principal component analysis (PCA) in R (code: PCA_for_FigS1.R, dataset:S.all.trait.txt);
+First, the i-Traits were extracted from maize images (code: maize image analysis.iac) on the HTP platform software system, and then all i-Traits data were analyzed, such as Principal component analysis (PCA) in R (Folder: PCA_example, scatter_example);  
 
-Next, we performed genome-wide association analysis (GWAS) and showed the distribution of significant association SNP at a genome-wide scale (code: CMplot_for_Fig5B.R, dataset: PH.SNP.txt);
+Next, we performed genome-wide association analysis (GWAS) and showed the distribution of significant association SNP at a genome-wide scale (Folder: GWAS_example_data, Manhattan_and_qq_example, Candidate_gene_example, CMplot_example);    
 
-Finally, we implemented maize final plant height (PH) prediction using early stage i-Traits based on Random forests (RF) (code: caret_regression_RF_CV10.R, dataset: S4_all.txt).
+Finally, we implemented maize final plant height (PH) prediction using early stage i-Traits based on Random forests (RF) (Folder: Random_Forest_example).  
 
-# System requirement
-## For GWAS
+# System requirement  
+## For GWAS  
 
   1. plink v1.90b6.21   
   2. admixture v1.3.0   
@@ -31,9 +31,11 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
       * FactoMineR v2.6   
       * factoextra v1.0.7  
       * ggpubr v0.4.0
-      * GGally  v2.1.2  
+      * GGally  v2.1.2 
+      * qqman v0.1.8  
       
 # Quick Start to install the required program
+
   1. insatll conda  
   
     Download annoconda form conda (https://anaconda.org/anaconda/conda)  
@@ -76,6 +78,7 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     install.packages("factoextra")  
     install.packages("ggpubr")  
     install.packages("GGally")  
+    install.packages("qqman")  
     
 # GWAS
 ## 1. data preparation  
@@ -158,4 +161,13 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
      ./LDBlockShow-master/bin/ShowLDSVG   -InPreFix  Zm035008  -OutPut   Zm035008.1     -InGWAS   i-MPAR_S7_Zm035008.GLM.txt   -Cutline  6.097599473  -PointSize 15   -OutPng   -SpeSNPName  i-MPAR_S7_Zm035008.GLM.snp  -ShowGWASSpeSNP  
 
      
-    
+# Data visualization and model training 
+
+  #These analysis were performed in R software, for details, please see folder:  
+   * CMplot_example  
+   * Manhattan_and_qq_example  
+   * PCA_example  
+   * Random_Forest_example  
+   * scatter_example  
+
+   
