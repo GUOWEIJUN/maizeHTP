@@ -35,7 +35,9 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
       * qqman v0.1.8  
       
 # Quick Start to install the required program
-
+  
+  ## Linux
+  
   1. insatll conda  
   
     Download annoconda form conda (https://anaconda.org/anaconda/conda)  
@@ -71,7 +73,7 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     sh  make.sh                         
     ../bin/LDBlockShow  
  
-  # R package
+  ## R package
     install.packages("ggplot2")
     install.packages("caret") 
     install.packages("FactoMineR")
