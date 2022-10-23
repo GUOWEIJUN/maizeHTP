@@ -26,10 +26,10 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
   1. R 4.1.0  
   2. Rstudio   
   3. R package  
-     ggplot2  3.3.6  
-     caret 6.0-93  
-     FactoMineR 2.6   
-     factoextra 1.0.7  
+     * ggplot2  3.3.6  
+     * caret 6.0-93  
+     * FactoMineR 2.6   
+     * factoextra 1.0.7  
 
 
 # Quick Start to install the required program
