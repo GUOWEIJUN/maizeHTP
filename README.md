@@ -30,6 +30,8 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
       * caret v6.0-93  
       * FactoMineR v2.6   
       * factoextra v1.0.7  
+      * ggpubr v0.4.0
+      
 
 
 # Quick Start to install the required program
@@ -73,6 +75,7 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     install.packages("caret") 
     install.packages("FactoMineR")
     install.packages("factoextra")  
+    install.packages("ggpubr")  
     
 # GWAS
 ## 1. data preparation  
