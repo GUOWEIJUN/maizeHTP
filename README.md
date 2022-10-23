@@ -31,9 +31,8 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
       * FactoMineR v2.6   
       * factoextra v1.0.7  
       * ggpubr v0.4.0
+      * GGally  v2.1.2  
       
-
-
 # Quick Start to install the required program
   1. insatll conda  
   
@@ -76,6 +75,7 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     install.packages("FactoMineR")
     install.packages("factoextra")  
     install.packages("ggpubr")  
+    install.packages("GGally")  
     
 # GWAS
 ## 1. data preparation  
