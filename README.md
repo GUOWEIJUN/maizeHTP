@@ -28,8 +28,8 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
   3. R package  
      ggplot2  3.3.6  
      caret 6.0-93  
-     FactoMineR
-     factoextra
+     FactoMineR 2.6   
+     factoextra 1.0.7  
 
 
 # Quick Start to install the required program
@@ -72,7 +72,8 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
     1. install.packages("ggplot2")
     2. install.packages("caret") 
     3. install.packages("FactoMineR")
-    4. install.packages("factoextra")
+    4. install.packages("factoextra")  
+    
 # GWAS
 ## 1. data preparation  
     # All_imputated.hmp
