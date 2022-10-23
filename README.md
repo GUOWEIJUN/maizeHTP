@@ -164,6 +164,7 @@ Finally, we implemented maize final plant height (PH) prediction using early sta
 # Data visualization and model training 
 
   #These analysis were performed in R software, for details, please see folder:  
+  
    * CMplot_example  
    * Manhattan_and_qq_example  
    * PCA_example  
